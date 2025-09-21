@@ -33,9 +33,16 @@ export function MovieCard({
   className,
 }: MovieCardProps) {
   // Normal width to compare against (designer's "ancho normal")
-  const normalWidth = expandedWidth && expandedWidth > 0 ? expandedWidth : width;
-  const baseWidth = typeof collapsedWidth === "number" && collapsedWidth > 0 ? collapsedWidth : Math.round(normalWidth / 3);
-  const finalHoverWidth = typeof hoverWidth === "number" && hoverWidth > 0 ? hoverWidth : Math.round(normalWidth * 2);
+  const normalWidth =
+    expandedWidth && expandedWidth > 0 ? expandedWidth : width;
+  const baseWidth =
+    typeof collapsedWidth === "number" && collapsedWidth > 0
+      ? collapsedWidth
+      : Math.round(normalWidth / 3);
+  const finalHoverWidth =
+    typeof hoverWidth === "number" && hoverWidth > 0
+      ? hoverWidth
+      : Math.round(normalWidth * 2);
 
   return (
     <div
@@ -76,16 +83,18 @@ export function MovieCard({
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           <button
             aria-label="Guardar"
-            className="absolute right-2 top-2 rounded-full bg-black/60 p-2 text-white opacity-0 shadow-sm transition-opacity duration-300 group-hover:opacity-100"
+            className="absolute right-2 top-2 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           >
-            <Bookmark className="h-4 w-4" />
+            <Bookmark className="w-[22px] h-[28px]" />
           </button>
           <div className="absolute inset-x-3 bottom-3 translate-y-2 space-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
             <h3 className="line-clamp-2 text-base font-semibold leading-tight text-white drop-shadow-sm">
               {title}
             </h3>
             <div className="flex items-center gap-2 text-xs text-white/90">
-              <span className="rounded border border-white/50 px-1.5 py-0.5 leading-none">{rating}</span>
+              <span className="rounded border border-white/50 px-1.5 py-0.5 leading-none">
+                {rating}
+              </span>
               <span>{duration}</span>
               <span>•</span>
               <span>{year}</span>
@@ -93,13 +102,16 @@ export function MovieCard({
               <span className="font-medium">{provider}</span>
             </div>
             <div>
-              <button className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-sm font-semibold text-black shadow-sm backdrop-blur-sm transition-colors hover:bg-white">
-                Mirar en <ChevronDown className="h-4 w-4" />
+              <button className="relative inline-flex items-center justify-center rounded-full bg-[#3c4043] px-3 py-1.5 text-sm font-semibold text-white w-[190px] shadow-sm transition-colors hover:bg-[#3c4043]/90">
+                <span className="pointer-events-none">Mirar en</span>
+                <ChevronDown className="h-4 w-4 absolute right-3" />
               </button>
             </div>
           </div>
         </div>
-        <div className="mt-2 truncate text-sm font-medium text-foreground/90">{title}</div>
+        <div className="mt-2 truncate text-sm font-medium text-foreground/90">
+          {title}
+        </div>
       </div>
     </div>
   );
