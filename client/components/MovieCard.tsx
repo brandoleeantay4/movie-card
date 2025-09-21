@@ -93,7 +93,7 @@ export function MovieCard({
               <span className="font-medium">{provider}</span>
             </div>
             <div>
-              <button className="inline-flex items-center gap-2 rounded-full bg-[#3c4043] px-3 py-1.5 text-sm font-semibold text-white w-[190px] shadow-sm transition-colors hover:bg-[#3c4043]/90">
+              <button className="inline-flex items-center justify-between rounded-full bg-[#3c4043] px-3 py-1.5 text-sm font-semibold text-white w-[190px] shadow-sm transition-colors hover:bg-[#3c4043]/90">
                 Mirar en <ChevronDown className="h-4 w-4" />
               </button>
             </div>
