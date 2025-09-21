@@ -33,9 +33,16 @@ export function MovieCard({
   className,
 }: MovieCardProps) {
   // Normal width to compare against (designer's "ancho normal")
-  const normalWidth = expandedWidth && expandedWidth > 0 ? expandedWidth : width;
-  const baseWidth = typeof collapsedWidth === "number" && collapsedWidth > 0 ? collapsedWidth : Math.round(normalWidth / 3);
-  const finalHoverWidth = typeof hoverWidth === "number" && hoverWidth > 0 ? hoverWidth : Math.round(normalWidth * 2);
+  const normalWidth =
+    expandedWidth && expandedWidth > 0 ? expandedWidth : width;
+  const baseWidth =
+    typeof collapsedWidth === "number" && collapsedWidth > 0
+      ? collapsedWidth
+      : Math.round(normalWidth / 3);
+  const finalHoverWidth =
+    typeof hoverWidth === "number" && hoverWidth > 0
+      ? hoverWidth
+      : Math.round(normalWidth * 2);
 
   return (
     <div
@@ -85,7 +92,9 @@ export function MovieCard({
               {title}
             </h3>
             <div className="flex items-center gap-2 text-xs text-white/90">
-              <span className="rounded border border-white/50 px-1.5 py-0.5 leading-none">{rating}</span>
+              <span className="rounded border border-white/50 px-1.5 py-0.5 leading-none">
+                {rating}
+              </span>
               <span>{duration}</span>
               <span>•</span>
               <span>{year}</span>
@@ -100,7 +109,9 @@ export function MovieCard({
             </div>
           </div>
         </div>
-        <div className="mt-2 truncate text-sm font-medium text-foreground/90">{title}</div>
+        <div className="mt-2 truncate text-sm font-medium text-foreground/90">
+          {title}
+        </div>
       </div>
     </div>
   );
